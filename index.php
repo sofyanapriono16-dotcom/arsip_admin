@@ -13,9 +13,9 @@ if (!$koneksi) {
     <meta charset="UTF-8">
     <title>Sistem Arsip Surat Digital</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 40px; background-color: #f4f7f6; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 40px; background-color: #090088be; }
         .container { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h2 { color: #333; }
+        h2 { color: #0a038d; }
         
         /* Baris Atas (Tombol & Form Cari) */
         .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
@@ -24,7 +24,7 @@ if (!$koneksi) {
         .btn { padding: 8px 12px; border-radius: 5px; text-decoration: none; font-size: 14px; color: white; border: none; cursor: pointer; }
         .btn-tambah { background: #28a745; }
         .btn-cari { background: #007bff; }
-        .btn-edit { background: #ffc107; color: #212529; }
+        .btn-edit { background: #ffc107; color: #001a79; }
         .btn-hapus { background: #dc3545; }
         .btn-lihat { background: #17a2b8; }
         
