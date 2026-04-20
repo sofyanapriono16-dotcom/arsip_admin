@@ -1,5 +1,4 @@
 <?php
-// 1. KONEKSI LANGSUNG (Tanpa include agar pasti terbaca)
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -11,18 +10,15 @@ if (!$koneksi) {
     die("Koneksi gagal: " . mysqli_connect_error());
 }
 
-// 2. AMBIL DATA DARI FORM
 $nomor_surat = $_POST['nomor_surat'];
 $tgl_surat   = $_POST['tgl_surat'];
 $pengirim    = $_POST['pengirim'];
 $perihal     = $_POST['perihal'];
 
-// 3. KELOLA FILE
 $nama_file   = $_FILES['file_surat']['name'];
 $tmp_name    = $_FILES['file_surat']['tmp_name'];
 $lokasi      = "uploads/" . $nama_file;
 
-// 4. PROSES SIMPAN
 if (move_uploaded_file($tmp_name, $lokasi)) {
     $query = "INSERT INTO surat (nomor_surat, tgl_surat, pengirim, perihal, file_surat) 
               VALUES ('$nomor_surat', '$tgl_surat', '$pengirim', '$perihal', '$nama_file')";

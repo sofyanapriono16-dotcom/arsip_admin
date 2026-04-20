@@ -1,5 +1,4 @@
 <?php
-// --- 1. KONEKSI DATABASE ---
 $koneksi = mysqli_connect("localhost", "root", "", "db_arsip_admin");
 
 if (!$koneksi) {
@@ -17,10 +16,8 @@ if (!$koneksi) {
         .container { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         h2 { color: #0a038d; }
         
-        /* Baris Atas (Tombol & Form Cari) */
         .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         
-        /* Tombol & Form */
         .btn { padding: 8px 12px; border-radius: 5px; text-decoration: none; font-size: 14px; color: white; border: none; cursor: pointer; }
         .btn-tambah { background: #28a745; }
         .btn-cari { background: #007bff; }
@@ -30,7 +27,6 @@ if (!$koneksi) {
         
         input[type="text"] { padding: 8px; width: 250px; border: 1px solid #ddd; border-radius: 5px; }
 
-        /* Tabel */
         table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         th, td { padding: 12px; border: 1px solid #eee; text-align: left; }
         th { background-color: #f8f9fa; color: #333; }
@@ -40,8 +36,8 @@ if (!$koneksi) {
 <body>
 
 <div class="container">
-    <h2>📂 Daftar Arsip Surat Digital</h2>
-    
+
+    <h2>Daftar Arsip Surat Digital</h2>
     <div class="top-bar">
         <a href="tambah.php" class="btn btn-tambah">+ Tambah Surat Baru</a>
 
@@ -65,7 +61,6 @@ if (!$koneksi) {
         </thead>
         <tbody>
             <?php
-            // --- LOGIKA PENCARIAN ---
             if (isset($_GET['cari']) && $_GET['cari'] != "") {
                 $keyword = $_GET['cari'];
                 $query = mysqli_query($koneksi, "SELECT * FROM surat WHERE 
