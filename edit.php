@@ -14,7 +14,7 @@ $data = mysqli_fetch_array($query);
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Data Arsip</title>
+    <title>Edit Data Arsip Surat</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; margin: 40px; background-color: #f4f7f6; }
         .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
@@ -34,7 +34,7 @@ $data = mysqli_fetch_array($query);
 <body>
 
     <div class="container">
-        <h2>Edit Data Arsip</h2>
+        <h2>Edit Data Arsip Surat</h2>
         <a href="index.php" class="btn-kembali">← Kembali</a>
 
         <form action="proses_edit.php" method="POST" enctype="multipart/form-data">
