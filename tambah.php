@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label>Pengirim/Penerima</label>
-                <input type="text" name="pengirim" placeholder="Nama instansi atau perorangan" required>
+                <input type="text" name="pengirim" placeholder="Nama Pengirim/Penerima" required>
             </div>
             <div class="form-group">
                 <label>Keterangan Surat</label>

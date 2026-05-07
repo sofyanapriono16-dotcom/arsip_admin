@@ -12,15 +12,14 @@ $koneksi = mysqli_connect("localhost", "root", "", "db_arsip_admin");
         th, td { border: 1px solid #eee; padding: 12px; text-align: left; }
         th { background-color: #f8f9fa; }
         
-        /* Gaya Form Cari */
         .search-box { margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
         .search-box input[type="text"] { padding: 10px; width: 300px; border: 1px solid #ddd; border-radius: 5px; }
         .search-box button { padding: 10px 15px; background: #4e43a0; color: white; border: none; border-radius: 5px; cursor: pointer; }
         
         .btn-tambah { background: #28a745; color: white; padding: 10px; text-decoration: none; border-radius: 5px; font-weight: bold; }
         .badge { padding: 5px 10px; border-radius: 4px; font-size: 12px; color: white; }
-        .bg-masuk { background: #17a2b8; }
-        .bg-keluar { background: #ffc107; color: black; }
+        .bg-masuk { background: #28a745; }
+        .bg-keluar { background: #ff0019; }
         .btn-aksi { padding: 5px 10px; text-decoration: none; border-radius: 3px; font-size: 12px; color: white; margin-right: 2px; }
     </style>
 </head>
@@ -31,9 +30,8 @@ $koneksi = mysqli_connect("localhost", "root", "", "db_arsip_admin");
         <div class="search-box">
             <a href="tambah.php" class="btn-tambah">+ Tambah Surat Baru</a>
             
-            <!-- Form Pencarian -->
             <form action="index.php" method="GET">
-                <input type="text" name="cari" placeholder="Cari nomor, nama, perihal..." value="<?php echo isset($_GET['cari']) ? $_GET['cari'] : ''; ?>">
+                <input type="text" name="cari" placeholder="Cari Surat" value="<?php echo isset($_GET['cari']) ? $_GET['cari'] : ''; ?>">
                 <button type="submit">Cari</button>
                 <?php if(isset($_GET['cari'])): ?>
                     <a href="index.php" style="margin-left: 10px; text-decoration: none; color: red; font-size: 13px;">Reset</a>
@@ -57,10 +55,8 @@ $koneksi = mysqli_connect("localhost", "root", "", "db_arsip_admin");
                 <?php
                 $no = 1;
                 
-                // Logika Pencarian Multi-Kolom
                 if(isset($_GET['cari'])){
                     $cari = $_GET['cari'];
-                    // Mencari di semua kolom: nomor_surat, tgl_surat, pengirim, keterangan, perihal
                     $query = mysqli_query($koneksi, "SELECT * FROM surat WHERE 
                         nomor_surat LIKE '%$cari%' OR 
                         tgl_surat LIKE '%$cari%' OR 
@@ -68,7 +64,6 @@ $koneksi = mysqli_connect("localhost", "root", "", "db_arsip_admin");
                         keterangan LIKE '%$cari%' OR 
                         perihal LIKE '%$cari%'");
                 } else {
-                    // Jika tidak ada pencarian, tampilkan semua
                     $query = mysqli_query($koneksi, "SELECT * FROM surat");
                 }
 
