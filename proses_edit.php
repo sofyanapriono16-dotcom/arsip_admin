@@ -1,5 +1,5 @@
 <?php
-$koneksi = mysqli_connect("localhost", "root", "", "db_arsip_admin");
+include "koneksi.php";
 
 $id         = $_POST['id'];
 $no_surat   = $_POST['no_surat'];

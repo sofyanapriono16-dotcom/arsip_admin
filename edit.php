@@ -1,5 +1,5 @@
 <?php
-$koneksi = mysqli_connect("localhost", "root", "", "db_arsip_admin");
+include "koneksi.php";
 $id = $_GET['id'];
 $query = mysqli_query($koneksi, "SELECT * FROM surat WHERE id = '$id'");
 $data = mysqli_fetch_array($query);
